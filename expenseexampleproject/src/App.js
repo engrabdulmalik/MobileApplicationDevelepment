@@ -7,9 +7,12 @@ function App() {
     { title: "Car Tyres", amount: 9000, date: new Date(2023, 9, 11) },
     { title: "Car Lights", amount: 10000, date: new Date(2023, 9, 10) },
   ];
+  const receiveDataHandler = (expensesData) => {
+    console.log(expensesData);
+  }
   return (
     <div>
-      <NewExpense />
+      <NewExpense onReceiveData={receiveDataHandler}/>
      <Expenses items = {expenses}></Expenses>
     </div>
   );
